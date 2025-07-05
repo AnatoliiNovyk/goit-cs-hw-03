@@ -3,7 +3,7 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 
 # Підключення до MongoDB Atlas
 # Замініть <username>, <password> та <cluster-url> на ваші дані
-MONGO_URI = "mongodb+srv://<username>:<password>@<cluster-url>/test?retryWrites=true&w=majority"
+MONGO_URI = "mongodb://localhost:27017/"
 
 try:
     client = MongoClient(MONGO_URI)
@@ -91,11 +91,13 @@ def delete_all_cats():
 if __name__ == "__main__":
     # Приклад використання функцій:
     # create_cat("barsik", 3, ["ходить в капці", "дає себе гладити", "рудий"])
+    # create_cat("murka", 5, ["любить спати", "їсть рибу"])
     print("Всі коти:")
     read_all_cats()
-    print("\nІнформація про кота 'barsik':")
-    read_cat_by_name("barsik")
+    # print("\nІнформація про кота 'barsik':")
+    # read_cat_by_name("barsik")
     # update_cat_age("barsik", 4)
     # add_feature_to_cat("barsik", "любить спати на сонці")
     # delete_cat_by_name("barsik")
-    # delete_all_cats()
+    # delete_cat_by_name("murka")
+    delete_all_cats()
