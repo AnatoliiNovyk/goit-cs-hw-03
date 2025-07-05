@@ -10,7 +10,7 @@ try:
     conn = psycopg2.connect(
         dbname="task_manager",
         user="postgres",
-        password="mysecretpassword",
+        password="Pa55W0rd",
         host="localhost"
     )
     cur = conn.cursor()
@@ -23,7 +23,7 @@ try:
     # Додавання користувачів
     users = []
     for _ in range(10):  # Створимо 10 користувачів
-        users.append((fake.name(), fake.email()))
+        users.append((fake.name(), fake.unique.email()))
     cur.executemany("INSERT INTO users (fullname, email) VALUES (%s, %s)", users)
     print("Користувачів додано.")
 
