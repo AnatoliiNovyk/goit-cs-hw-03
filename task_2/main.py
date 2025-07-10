@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
 
 # Підключення до MongoDB Atlas
-# Замініть <username>, <password> та <cluster-url> на ваші дані
+# Заміна <username>, <password> та <cluster-url> на власні дані
 MONGO_URI = "mongodb+srv://goitlearn:Pa55W0rd@goit-cluster.8wulc7w.mongodb.net/?retryWrites=true&w=majority&appName=GOIT-Cluster"
 
 try:
